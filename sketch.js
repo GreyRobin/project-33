@@ -114,9 +114,10 @@ function draw()
   }
   
   //add condition for collision
-if(collide(fruit,bubble,80)==true){
-  fruit.velocityY = -5
-  bubble.velocityY = -5
+if(collide(fruit,bubble,40)==true){
+ engine.world.gravity.y=-1;
+ bubble.position.x=fruit.position.x;
+ bubble.position.y=fruit.position.y;
 }
   drawSprites();
 
@@ -132,7 +133,7 @@ function drop()
 function remove_rope()
 {
   rope.break();
-  rope2.break()
+ // rope2.break()
   con.dettach();
   con = null; 
 }
